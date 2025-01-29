@@ -31,6 +31,7 @@ from libs.dbname import dbname
 
 catalog = "acme_transport_taxinyc"
 revenue_db = dbname(cat=catalog, db="revenue")
+#reveune_db = 'hallvards_kos'
 print("New db name: " + revenue_db)
 spark.sql(f"USE catalog {catalog}")
 spark.sql(f"CREATE DATABASE IF NOT EXISTS {revenue_db}")
@@ -45,6 +46,35 @@ spark.sql(f"CREATE DATABASE IF NOT EXISTS {revenue_db}")
 # MAGIC %sql
 # MAGIC USE CATALOG acme_transport_taxinyc;
 # MAGIC SHOW DATABASES;
+
+# COMMAND ----------
+
+
+
+# COMMAND ----------
+
+
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC USE CATALOG acme_transport_taxinyc;
+# MAGIC use schema dev_hallvard_featgh81218bergen_4c6799ab_revenue;
+# MAGIC --show schemas;
+# MAGIC select * FROM acme_transpo;
+# MAGIC --create table acme_transport_taxinyc.dev_hallvard_featgh81218 
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC --USE CATALOG acme_transport_taxinyc;
+# MAGIC --use schema dev_hallvard_featgh81218bergen_4c6799ab_revenue;
+# MAGIC --show schemas;
+# MAGIC select * FROM acme_transport_taxinyc.dev_hallvard_featgh81218bergen_4c6799ab_revenue.acme_transpo;
+
+# COMMAND ----------
+
+
 
 # COMMAND ----------
 

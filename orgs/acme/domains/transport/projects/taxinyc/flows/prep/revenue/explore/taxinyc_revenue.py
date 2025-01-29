@@ -33,9 +33,12 @@ trips_df.display()
 
 # COMMAND ----------
 
+print(type(trips_df))
 revenue_by_borough_df = (
     trips_df.groupBy("pickup_borough")
-    .agg(F.sum("total_amount").alias("amount"))
+    .agg(F.sum("total_amount").alias("amount"),
+         F.count("*").alias("n_trips"),
+         F.avg("total_amount").alias('avg_amount'))
     .sort(F.col("pickup_borough").asc())
 )
 revenue_by_borough_df.display()
